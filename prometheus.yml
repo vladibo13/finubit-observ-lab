@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s  # How often to scrape targets
+
+scrape_configs:
+  - job_name: 'front-app'
+    static_configs:
+      - targets: ['front:8000']
+
+  - job_name: 'core-app'
+    static_configs:
+      - targets: ['core:8001']    
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
